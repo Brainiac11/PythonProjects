@@ -42,57 +42,73 @@ except ValueError:
     print("You have to type a number!")
     sys.exit()
 if operator1 == '+':
-    answer = print(number1 + number2)
+    answer = number1 + number2
+    print("The answer is: " + str(answer))
     with open('Log.txt', 'w') as f:
         f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
 elif operator1 == '-':
-    answer = print(number1 - number2)
+    answer = number1 - number2
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
 elif operator1 == '*':
-    answer = print(number1 * number2)
+    answer = number1 * number2
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
 elif operator1 == '/':
-    answer = print(number1 / number2)
+    answer = number1 / number2
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
 elif operator1 == '^':
-    answer = print(number1 ** number2)
+    answer = number1 ** number2
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
 elif operator1 == 'sqrt':
-    answer = print(math.sqrt(number1))
+    answer = math.sqrt(number1)
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'log':
-    answer = print(math.log(number1))
+    answer = math.log(number1)
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'sin':
-    answer = print(math.sin(number1))
+    answer = math.sin(number1)
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'cos':
-    answer = print(math.cos(number1))
+    answer = math.cos(number1)
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'tan':
-    answer = print(math.tan(number1))
+    answer = math.tan(number1)
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'sin^-1':
-   answer= print(math.asin(number1))
+   answer= math.asin(number1)
+   print(answer)
    with open('Log.txt', 'w') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'cos^-1':
-    answer = print(math.acos(number1))
+    answer = math.acos(number1)
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'tan^-1':
-    answer  = print(math.atan(number1))
+    answer  = math.atan(number1)
+    print(answer)
     with open('Log.txt', 'w') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
+        
+f.close()
+
     
 
 
