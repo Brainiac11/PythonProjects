@@ -2,6 +2,7 @@
 import math
 import sys
 import os
+from xml.dom.pulldom import IGNORABLE_WHITESPACE
 print("Welcome to the calculator!")
 print("These are the available operations:")
 print("1. Addition(+)")
@@ -26,7 +27,7 @@ except ValueError:
     sys.exit()
 operator1 = input("Type out your operator: ")
 try:
-   if operator1 == '+' or '-' or '*' or '/' or '^' or 'sqrt' or 'log' or 'sin' or 'cos' or 'tan' :
+   if operator1 == '+' or '-' or '*' or '/' or '^' or 'sqrt' or 'log' or 'sin' or 'cos' or 'tan' or IGNORABLE_WHITESPACE('sin^-1') or IGNORABLE_WHITESPACE('cos^-1') or IGNORABLE_WHITESPACE('tan^-1'):
          pass
 except ValueError:
     print("You have to type a valid operator!")
@@ -58,4 +59,10 @@ elif operator1 == 'cos':
     print(math.cos(number1))
 elif operator1 == 'tan':
     print(math.tan(number1))
-
+elif operator1 == 'sin^-1':
+    print(math.asin(number1))
+elif operator1 == 'cos^-1':
+    print(math.acos(number1))
+elif operator1 == 'tan^-1':
+    print(math.atan(number1))
+    
