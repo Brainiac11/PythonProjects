@@ -3,7 +3,7 @@ import math
 import sys
 import os
 from xml.dom.pulldom import IGNORABLE_WHITESPACE
-f  =open ("CalculatorLog.txt", "w")
+f  =open ("Log.txt", "w")
 
 print("Welcome to the calculator!")
 print("These are the available operations:")
@@ -43,34 +43,57 @@ except ValueError:
     sys.exit()
 if operator1 == '+':
     answer = print(number1 + number2)
-    
+    with open('Log.txt', 'w') as f:
+        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
 elif operator1 == '-':
     answer = print(number1 - number2)
+    with open('Log.txt', 'w') as f:
+        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
 elif operator1 == '*':
     answer = print(number1 * number2)
+    with open('Log.txt', 'w') as f:
+        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
 elif operator1 == '/':
     answer = print(number1 / number2)
+    with open('Log.txt', 'w') as f:
+        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
 elif operator1 == '^':
     answer = print(number1 ** number2)
+    with open('Log.txt', 'w') as f:
+        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
 elif operator1 == 'sqrt':
     answer = print(math.sqrt(number1))
+    with open('Log.txt', 'w') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'log':
     answer = print(math.log(number1))
+    with open('Log.txt', 'w') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'sin':
     answer = print(math.sin(number1))
+    with open('Log.txt', 'w') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'cos':
     answer = print(math.cos(number1))
+    with open('Log.txt', 'w') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'tan':
     answer = print(math.tan(number1))
+    with open('Log.txt', 'w') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'sin^-1':
    answer= print(math.asin(number1))
+   with open('Log.txt', 'w') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'cos^-1':
     answer = print(math.acos(number1))
+    with open('Log.txt', 'w') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
 elif operator1 == 'tan^-1':
-    answer = print(math.atan(number1))
-
-with open('readme.txt', 'w') as f:
-    f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
+    answer  = print(math.atan(number1))
+    with open('Log.txt', 'w') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
+    
 
 
     
