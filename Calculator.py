@@ -3,6 +3,8 @@ import math
 import sys
 import os
 from xml.dom.pulldom import IGNORABLE_WHITESPACE
+f  =open ("CalculatorLog.txt", "w")
+
 print("Welcome to the calculator!")
 print("These are the available operations:")
 print("1. Addition(+)")
@@ -40,29 +42,35 @@ except ValueError:
     print("You have to type a number!")
     sys.exit()
 if operator1 == '+':
-    print(number1 + number2)
+    answer = print(number1 + number2)
+    
 elif operator1 == '-':
-    print(number1 - number2)
+    answer = print(number1 - number2)
 elif operator1 == '*':
-    print(number1 * number2)
+    answer = print(number1 * number2)
 elif operator1 == '/':
-    print(number1 / number2)
+    answer = print(number1 / number2)
 elif operator1 == '^':
-    print(number1 ** number2)
+    answer = print(number1 ** number2)
 elif operator1 == 'sqrt':
-    print(math.sqrt(number1))
+    answer = print(math.sqrt(number1))
 elif operator1 == 'log':
-    print(math.log(number1))
+    answer = print(math.log(number1))
 elif operator1 == 'sin':
-    print(math.sin(number1))
+    answer = print(math.sin(number1))
 elif operator1 == 'cos':
-    print(math.cos(number1))
+    answer = print(math.cos(number1))
 elif operator1 == 'tan':
-    print(math.tan(number1))
+    answer = print(math.tan(number1))
 elif operator1 == 'sin^-1':
-    print(math.asin(number1))
+   answer= print(math.asin(number1))
 elif operator1 == 'cos^-1':
-    print(math.acos(number1))
+    answer = print(math.acos(number1))
 elif operator1 == 'tan^-1':
-    print(math.atan(number1))
+    answer = print(math.atan(number1))
+
+with open('readme.txt', 'w') as f:
+    f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
+
+
     
