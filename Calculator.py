@@ -2,9 +2,11 @@ import cmath
 import math
 import sys
 import os
+from cmath import *
 from xml.dom.pulldom import IGNORABLE_WHITESPACE
 
-f  =open ("Log.txt", "w")
+#f  =open ("Log.txt", "a")
+pi = 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679
 
 print("Welcome to the calculator!")
 print("These are the available operations:")
@@ -53,75 +55,77 @@ else:
 if operator1 == '+':
     answer = number1 + number2
     print("The answer is: " + str(answer))
-    with open('Log.txt', 'w') as f:
-        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.writelines(str(number1)  + str(operator1) + str(number2) + '=' + str(answer) + '\n')
 elif operator1 == '-':
     answer = number1 - number2
     print(answer)
-    with open('Log.txt', 'w') as f:
-        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer) + '\n')
 elif operator1 == '*':
     answer = number1 * number2
     print(answer)
-    with open('Log.txt', 'w') as f:
-        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer)+ '\n')
 elif operator1 == '/':
     answer = number1 / number2
     print(answer)
-    with open('Log.txt', 'w') as f:
-        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer)+ '\n')
 elif operator1 == '^':
     answer = number1 ** number2
     print(answer)
-    with open('Log.txt', 'w') as f:
-        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.write(str(number1) + str(operator1) + str(number2) + '=' + str(answer)+ '\n')
 elif operator1 == 'sqrt':
     answer = cmath.sqrt(number1)
     print(answer)
-    with open('Log.txt', 'w') as f:
-        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer)+ '\n')
 elif operator1 == 'log':
     answer = cmath.log(number1)
     print(answer)
-    with open('Log.txt', 'w') as f:
-        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer)+ '\n')
 elif operator1 == 'sin':
     answer = cmath.sin(number1)
-    answerln =  cmath.degrees(answer)
-    print(answerln)
-    with open('Log.txt', 'w') as f:
-        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
+    answerln =  answer * (180/pi) #converts radians to degrees
+    print(answerln) #prints answer in degrees
+    with open('Log.txt', 'a') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answerln)+ '\n')
 elif operator1 == 'cos':
     answer = cmath.cos(number1)
-    answerln =  cmath.degrees(answer)
+    answerln =  answer * (180/pi) #converts radians to degrees
     print(answerln)
-    with open('Log.txt', 'w') as f:
-        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answerln)+ '\n')
 elif operator1 == 'tan':
     answer = cmath.tan(number1)
-    answerln =  cmath.degrees(answer)
+    answerln =  answer * (180/pi) #converts radians to degrees
     print(answerln)
-    with open('Log.txt', 'w') as f:
-        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answerln)+ '\n')
 elif operator1 == 'sin^-1':
-    answer= cmath.asin(number1)
-    answerln =  cmath.degrees(answer)
+    number1degrees = number1 * (180/pi) #converts radians to degrees
+    answer= cmath.asin(number1degrees)
+    answerln =  answer
     print(answerln)
-    with open('Log.txt', 'w') as f:
-        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answerln)+ '\n')
 elif operator1 == 'cos^-1':
-    answer = cmath.acos(number1)
-    answerln =  cmath.degrees(answer)
+    number1degrees = number1 * (180/pi)
+    answer = cmath.acos(number1degrees)
+    answerln =  answer
     print(answerln)
-    with open('Log.txt', 'w') as f:
-        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
+    with open('Log.txt', 'a') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answerln)+  '\n')
 elif operator1 == 'tan^-1':
-    answer  = cmath.atan(number1)
-    answerln =  cmath.degrees(answer)
+    number1degrees = number1 * (180/pi)
+    answer  = cmath.atan(number1degrees)
+    answerln =  answer
     print(answerln)
-    with open('Log.txt', 'w') as f:
-        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer))
-        
+    with open('Log.txt', 'a') as f:
+        f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answerln)+ '\n')        
 f.close()
 
     
