@@ -4,9 +4,13 @@ import sys
 import os
 from cmath import *
 from xml.dom.pulldom import IGNORABLE_WHITESPACE
-
+# lists for confirming validity of inputs
+#ch_pi =['pi' , 'π']
+ch = ['+' , '-' , '*' , '/' , '^' , 'sqrt' , 'log' , 'sin' , 'cos' , 'tan' , 'tan^-1' ,'cos^-1' ,'sin^-1', '!']
+ch_trig = ['sin' , 'cos' , 'tan' , 'tan^-1' ,'cos^-1' ,'sin^-1', 'sqrt' , 'log' ,'^' , '!']
 #f  =open ("Log.txt", "a")
 pi = 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679
+e = 2.7182818284590452353602874713526624977572470936999595749669676277240766303535475945713821785251664274
 
 print("Welcome to the calculator!")
 print("These are the available operations:")
@@ -20,35 +24,49 @@ print("7. Logarithm(log)")
 print("8. Sinus(sin) [degrees]")
 print("9. Cosinus(cos) [degrees]")
 print("10. Tangens(tan) [degrees]")
+print("11. pi, (pi is not an operator)")
+print("12. e (e is not an operator)")
 print("^-1 is the inverse of the function or number")
-print("^2 is the square of the number")
-print("^3 is the cube of the number")
-print("^4 is the fourth power of the number")
+print("Type in all lowercase letters, or the calculator will not work")
 number1 = input("Type out your first number: ")
-try:
-    number1 = float(number1)
-except ValueError:
-    print("You have to type a number!")
-    sys.exit()
+if number1.lower() == 'pi':
+    number1 = pi
+elif number1.lower() == 'e':
+    number1 = e
+    
+else:
+    try:
+        number1 = float(number1)
+    except ValueError:
+        print("You have to type a number!")
+        sys.exit()
 operator1 = input("Type out your operator: ")
     #operator1 == '+' or '-' or '*' or '/' or '^' or 'sqrt' or 'log' or 'sin' or 'cos' or 'tan' or ('tan^-1') or ('cos^-1') or ('sin^-1')
-ch = ['+' , '-' , '*' , '/' , '^' , 'sqrt' , 'log' , 'sin' , 'cos' , 'tan' , 'tan^-1' ,'cos^-1' ,'sin^-1']
-ch_trig = ['sin' , 'cos' , 'tan' , 'tan^-1' ,'cos^-1' ,'sin^-1' 'sqrt' , 'log' ,'^']
+
 if operator1 in ch:
     pass
 
 else:
     print("You have to type an operator!")
     sys.exit()
+
 if operator1 in ch_trig:
     pass
 else:
     number2 = input("Type out your second number: ")
-    try:
-        number2 = float(number2)
-    except ValueError:
-        print("You have to type a number!")
-        sys.exit()
+    if number2.lower() == 'pi':
+        number2 = pi
+    elif number2.lower() == 'e':
+        number2 = e
+    else:
+        try:
+            number2 = float(number2)
+        except ValueError:
+            print("You have to type a number!")
+            sys.exit()
+
+
+
 
     
 
@@ -87,6 +105,12 @@ elif operator1 == 'log':
     print(answer)
     with open('Log.txt', 'a') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answer)+ '\n')
+elif operator1 == '!':
+    number1factorial = int(number1)
+    answer = math.factorial(number1factorial)
+    print(answer)
+    with open('Log.txt', 'a') as f:
+        f.write('(' + str(number1) + ')' + '!' + ' '+ '=' + str(answer)+ '\n')
 elif operator1 == 'sin':
     answer = cmath.sin(number1)
     answerln =  answer * (180/pi) #converts radians to degrees
