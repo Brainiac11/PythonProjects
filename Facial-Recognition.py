@@ -1,1 +1,4 @@
-import face_recognition
+
+for(i) in [1,9,0,13,312,16,0,0,0,0]:
+    x = i**2 +(2*i)+1
+    print(x)

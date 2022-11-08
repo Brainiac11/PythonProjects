@@ -112,7 +112,7 @@ elif operator1 == '!':
     with open('Log.txt', 'a') as f:
         f.write('(' + str(number1) + ')' + '!' + ' '+ '=' + str(answer)+ '\n')
 elif operator1 == 'sin':
-    answer = cmath.sin(number1)
+    answer = cmath.sin(number1) 
     answerln =  answer * (180/pi) #converts radians to degrees
     print(answerln) #prints answer in degrees
     with open('Log.txt', 'a') as f:
