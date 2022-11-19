@@ -70,7 +70,71 @@ if int(operation) in operator1 or operator2 or operator3:
 
 
 
+    elif operation == 2:
+        print("Enter a function solving for y")
+        print("Put NO spaces in the function")
+        print("If x has no coefficient, put 1")
+        print("Example: y=2x+3")
+        input("Press enter to continue...")
+        function = input("Type in your function: ")
+        
+        # 100 linearly spaced numbers
+        x = np.linspace(-5,5,100)
 
+        # the function, which is y = x^2 here
+        try:
+            'y' and '=' in function
+            
+        except:
+            print("Enter a valid function try again ")
+            exit()
+            
+        index = 2
+        i = 0
+        while i == 0:
+            try:
+                float(function[index])
+            except:
+                i=1
+            index = index + 1
+            
+        def operatorReaction(x):
+            if function[index] in addition:
+                y_value = x + float(function[index+1])
+                ys.append(y_value)
+                
+            elif function[index] in subtraction:
+                y_value = x - float(function[index+1])
+                ys.append(y_value)
+            else:
+                print("Enter a valid function try again! ")
+                exit()
+                
+        def operatorReaction2(x):
+            if function[index] in multiplication:
+                y_value = x * float(function[index+1])
+                ys.append(y_value)
+                
+            elif function[index] in division:
+                y_value = x / float(function[index+1])
+                ys.append(y_value)
+            
+            elif function[index] in exponentiation:
+                y_value = x ** float(function[index+1])
+                ys.append(y_value)
+                
+        try:
+            float(function[2])
+        except:
+            print("Enter a valid function try again. ")
+            exit()
+        
+        x = float(function[2])*x
+        posOfX = function.rfind('x')
+        #coefficient = function[posOfX - 1]
+        
+        operatorReaction(x)
+        operatorReaction2(x)
         def estimate_coef(x, y):
             # number of observations/points
             n = np.size(x)
@@ -117,7 +181,7 @@ if int(operation) in operator1 or operator2 or operator3:
             # estimating coefficients
             b = estimate_coef(x, y)
             element = "Estimated coefficients:\nb_0 = {} \
-                \nb_1 = {}".format(b[0], b[1])
+                \nb_1 = {}".format(b[0] , b[1])
             print(element)
             with open('Log.txt', 'a') as f:
                 f.write(element)
@@ -130,62 +194,7 @@ if int(operation) in operator1 or operator2 or operator3:
             main()
         
 
-    elif operation == 2:
-        print("Enter a function solving for y")
-        print("Put NO spaces in the function")
-        print("If x has no coefficient, put 1")
-        print("Example: y=2x+3")
-        input("Press enter to continue...")
-        function = input("Type in your function: ")
-        
-        # 100 linearly spaced numbers
-        x = np.linspace(-5,5,100)
-
-        # the function, which is y = x^2 here
-        try:
-            'y' and '=' in function
-            
-        except:
-            print("Enter a valid function try again ")
-            exit()
-            
-        def operatorReaction(x):
-            if function[4] in addition:
-                y_value = x + float(function[4:])
-                ys.append(y_value)
-                
-            elif function[4] in subtraction:
-                y_value = x - float(function[4])
-                ys.append(y_value)
-            
-            elif function[4] in multiplication:
-                y_value = x * float(function[4])
-                ys.append(y_value)
-                
-            elif function[4] in division:
-                y_value = x / float(function[4])
-                ys.append(y_value)
-            
-            elif function[4] in exponentiation:
-                y_value = x ** float(function[4])
-                ys.append(y_value)
-                
-            else:
-                print("Enter a valid function try again! ")
-                exit()
-                
-        
-        try:
-            float(function[2])
-        except:
-            print("Enter a valid function try again. ")
-            exit()
-        
-        x = float(function[2])*x
-        posOfX = function.rfind('x')
-        #coefficient = function[posOfX - 1]
-        
-        operatorReaction(x)
+    
         #print(x)
         #print(ys)
 
