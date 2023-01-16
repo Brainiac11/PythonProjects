@@ -1,6 +1,7 @@
 import pygame
 import os, random
 import numpy as np
+import sys
 
 FPS = 60
 SCREEN_SIZE = 30
@@ -141,7 +142,7 @@ class Snake():
           # QUIT
           if e.key == pygame.K_ESCAPE:
             pygame.quit()
-            exit()
+            sys.exit()
           # PAUSE
           if e.key == pygame.K_SPACE:
             pause = True
