@@ -53,14 +53,14 @@ if int(operation) in operator1 or operator2 or operator3:
             except ValueError:
                 print("You have to type a number!")
                 exit()
-            
+
             data_point_list_y.append(data_point_y)
             stop1 = input("Press enter to continue or done to stop...")
             if stop1 in stop:
                 i = 11
             i = int(i) + 1
-            
-            
+
+
         print("The data points you entered: ")
         print(data_point_list_x)
         print(data_point_list_y)
@@ -77,18 +77,18 @@ if int(operation) in operator1 or operator2 or operator3:
         print("Example: y=2x+3")
         input("Press enter to continue...")
         function = input("Type in your function: ")
-        
+
         # 100 linearly spaced numbers
         x = np.linspace(-5,5,100)
 
         # the function, which is y = x^2 here
         try:
             'y' and '=' in function
-            
+
         except:
             print("Enter a valid function try again ")
             exit()
-            
+
         index = 2
         i = 0
         while i == 0:
@@ -97,42 +97,42 @@ if int(operation) in operator1 or operator2 or operator3:
             except:
                 i=1
             index = index + 1
-            
+
         def operatorReaction(x):
             if function[index] in addition:
                 y_value = x + float(function[index+1])
                 ys.append(y_value)
-                
+
             elif function[index] in subtraction:
                 y_value = x - float(function[index+1])
                 ys.append(y_value)
             else:
                 print("Enter a valid function try again! ")
                 exit()
-                
+
         def operatorReaction2(x):
             if function[index] in multiplication:
                 y_value = x * float(function[index+1])
                 ys.append(y_value)
-                
+
             elif function[index] in division:
                 y_value = x / float(function[index+1])
                 ys.append(y_value)
-            
+
             elif function[index] in exponentiation:
                 y_value = x ** float(function[index+1])
                 ys.append(y_value)
-                
+
         try:
             float(function[2])
         except:
             print("Enter a valid function try again. ")
             exit()
-        
+
         x = float(function[2])*x
         posOfX = function.rfind('x')
         #coefficient = function[posOfX - 1]
-        
+
         operatorReaction(x)
         operatorReaction2(x)
         def estimate_coef(x, y):
@@ -192,9 +192,9 @@ if int(operation) in operator1 or operator2 or operator3:
 
         if __name__ == "__main__":
             main()
-        
 
-    
+
+
         #print(x)
         #print(ys)
 
@@ -219,7 +219,7 @@ if int(operation) in operator1 or operator2 or operator3:
 
         # show the plot
         plt.show()
-            
+
 
 else:
     print("You have to type an operation!?")

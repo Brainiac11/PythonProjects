@@ -31,7 +31,7 @@ if number1.lower() == 'pi':
     number1 = pi
 elif number1.lower() == 'e':
     number1 = e
-    
+
 else:
     try:
         number1 = float(number1)
@@ -66,7 +66,7 @@ else:
 
 
 
-    
+
 
 if operator1 == '+':
     answer = number1 + number2
@@ -149,6 +149,3 @@ elif operator1 == 'tan^-1':
     with open('Log.txt', 'a') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answerln)+ '\n')        
 f.close()
-
-    
-    

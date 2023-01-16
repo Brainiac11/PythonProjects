@@ -9,7 +9,7 @@ class Genome():
     self.w2 = np.random.randn(hidden_layer, 20)
     self.w3 = np.random.randn(20, hidden_layer)
     self.w4 = np.random.randn(hidden_layer, 3)
-    
+
   def forward(self, inputs):
     net = np.matmul(inputs, self.w1)
     net = self.relu(net)

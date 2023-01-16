@@ -14,10 +14,9 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-            
-    
+
+
     screen.blit(test_surface, (0, 0)) # Draw the surface to the screen
-    
+
     pygame.display.update() #updates the screen
     clock.tick(609) # Set the frame rate to 60 fps
-    
