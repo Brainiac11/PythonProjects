@@ -1,5 +1,6 @@
 from contextlib import nullcontext
 from statistics import LinearRegression, linear_regression
+import sys
 from tkinter import Variable
 import numpy as np
 import matplotlib.pyplot as plt
@@ -28,7 +29,7 @@ try:
     operation = int(operation)
 except ValueError:
     print("You have to type a number!")
-    exit()
+    sys.exit()
 if int(operation) in operator1 or operator2 or operator3:
     if operation == 1:
         print("Enter the x value, then the y value after pressing enter each time")
@@ -44,7 +45,7 @@ if int(operation) in operator1 or operator2 or operator3:
                 data_point_x = float(data_point_x)
             except ValueError:
                 print("You have to type a number!")
-                exit()
+                sys.exit()
 
             data_point_list_x.append(data_point_x)
             data_point_y = input("Enter the y value for your first data point: ")
@@ -52,7 +53,7 @@ if int(operation) in operator1 or operator2 or operator3:
                 data_point_y = float(data_point_y)
             except ValueError:
                 print("You have to type a number!")
-                exit()
+                sys.exit()
             
             data_point_list_y.append(data_point_y)
             stop1 = input("Press enter to continue or done to stop...")
@@ -87,7 +88,7 @@ if int(operation) in operator1 or operator2 or operator3:
             
         except:
             print("Enter a valid function try again ")
-            exit()
+            sys.exit()
             
         index = 2
         i = 0
@@ -108,7 +109,7 @@ if int(operation) in operator1 or operator2 or operator3:
                 ys.append(y_value)
             else:
                 print("Enter a valid function try again! ")
-                exit()
+                sys.exit()
                 
         def operatorReaction2(x):
             if function[index] in multiplication:
@@ -127,7 +128,7 @@ if int(operation) in operator1 or operator2 or operator3:
             float(function[2])
         except:
             print("Enter a valid function try again. ")
-            exit()
+            sys.exit()
         
         x = float(function[2])*x
         posOfX = function.rfind('x')
@@ -223,4 +224,4 @@ if int(operation) in operator1 or operator2 or operator3:
 
 else:
     print("You have to type an operation!?")
-    exit()
+    sys.exit()
