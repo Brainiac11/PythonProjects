@@ -1,8 +1,6 @@
 import cmath
 import math
 import sys
-import os
-from xml.dom.pulldom import IGNORABLE_WHITESPACE
 # lists for confirming validity of inputs
 #ch_pi =['pi' , 'π']
 ch = ['+' , '-' , '*' , '/' , '^' , 'sqrt' , 'log' , 'sin' , 'cos' , 'tan' , 'tan^-1' ,'cos^-1' ,'sin^-1', '!']
@@ -149,6 +147,3 @@ elif operator1 == 'tan^-1':
     with open('Log.txt', 'a') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answerln)+ '\n')        
 f.close()
-
-    
-    

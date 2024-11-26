@@ -1,9 +1,5 @@
-from contextlib import nullcontext
-from statistics import LinearRegression, linear_regression
-from tkinter import Variable
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
 operator1 = [1]
 operator2 = [2]
 operator3 = [3]

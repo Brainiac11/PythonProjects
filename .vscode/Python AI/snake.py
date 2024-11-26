@@ -1,5 +1,5 @@
 import pygame
-import os, random
+import random
 import numpy as np
 
 FPS = 60
