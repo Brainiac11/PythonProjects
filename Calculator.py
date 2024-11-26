@@ -149,6 +149,3 @@ elif operator1 == 'tan^-1':
     with open('Log.txt', 'a') as f:
         f.write(str(operator1) + '(' + str(number1) + ')' '=' + str(answerln)+ '\n')        
 f.close()
-
-    
-    
