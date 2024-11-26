@@ -58,7 +58,7 @@ class Snake():
       ):
       # self.fitness -= FPS/2
       return False
-    
+
     # eat fruit
     if all(new_head == self.fruit):
       self.last_fruit_time = self.timer
@@ -166,7 +166,7 @@ class Snake():
             elif prev_key != pygame.K_RIGHT and e.key == pygame.K_LEFT:
               self.direction = 3
               prev_key = e.key
-      
+
       # action
       if __name__ != '__main__':
         inputs = self.get_inputs()
